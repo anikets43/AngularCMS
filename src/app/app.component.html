@@ -1,0 +1,45 @@
+<div class="main-wrapper">
+    <app-top-navbar></app-top-navbar>
+    <div class="content-wrapper">
+        <div class="content-container">
+
+            <div class="left-sidebar box-shadow" [class.fixed-sidebar]="fixedSidebar" [class.small-nav]="smallSidebar" [class.bg-danger-300]="bgBlack300"
+                [class.bg-primary]="bgPrimary" [class.bg-danger]="bgDanger" [class.bg-success]="bgSuccess" [class.bg-warning]="bgWarning"
+                [class.bg-gray-500]="bgLight">
+                <div class="sidebar-content">
+                    <div class="sidebar-nav">
+                        <ul class="side-nav " [class.color-gray]="!bgLight">
+                            <li *ngFor="let menu of data"><a [routerLink]="menu.link"><i [class]="menu.icon"></i> <span>{{ menu.text }}</span></a></li>
+
+                            <!--<li routerLinkActive="active"><a [routerLink]="''"><i class="fa fa-bolt"></i> <span>Pay Roll </span></a></li>-->
+
+                        </ul>
+
+                    </div>
+                    <!-- /.sidebar-nav -->
+                </div>
+                <!-- /.sidebar-content -->
+            </div>
+            <!-- /.left-sidebar -->
+
+            <div class="main-page">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- /.main-page -->
+
+        </div>
+        <!-- /.content-container -->
+    </div>
+    <!-- /.content-wrapper -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">   
+                    AT&T 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.main-wrapper -->
+<!-- /.app-settings -->

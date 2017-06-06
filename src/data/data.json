@@ -1,0 +1,48 @@
+{
+    "header": {
+        "id": "header",
+        "text": "",
+        "logo": "/assets/images/logo.jpg",
+        "show": true
+    },
+    "footer": {
+        "id": "header",
+        "text": "Copyright AT&T 2017-18"
+    },
+    "sidebar": {
+        "modules": [
+            {
+                "moduleId": 1,
+                "text": "Employee",
+                "metadata": {
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name",
+                            "format": "text"
+                        },
+                        "password": {
+                            "type": "string",
+                            "description": "Password"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "password"
+                    ]
+                },
+                "show": true,
+                "link": "dashboard",
+                "icon": "fa fa-table"
+            },
+            {
+                "moduleId": 2,
+                "text": "Employee",
+                "metadata": {},
+                "show": true,
+                "link": "employee",
+                "icon": "fa fa-user"
+            }
+        ]
+    }
+}

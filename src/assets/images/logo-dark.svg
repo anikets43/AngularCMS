@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .page {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="svg-layer">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="" pageAlignment="none"
+                x="0px" y="0px" width="1200px" height="80px" viewBox="0 0 1200 80" enable-background="new 0 0 1200 80" xml:space="preserve"
+                bodyBackgroundColor="rgba(255,255,255,0)">
+                <defs/>
+                <g type="LAYER" name="workspace" id="workspace" locked="true" />
+                <g type="LAYER" name="Layer 01" id="Layer 01">
+                    <text type="textBox" transform="matrix(1 0 0 1 461.44455747710987 16.80569684638857)" width="244.15055951169882"
+                        height="31" stroke-miterlimit="3" stroke="none" fill="#000000" font-family="Arial" font-weight="bold"
+                        font-size="28" text-align="left" text-anchor="start">
+                        <tspan x="0" y="28">
+                            <![CDATA[Dashboard]]>
+                        </tspan>
+                    </text>
+                    <text type="textBox" transform="matrix(1 0 0 1 612.8179043743642 16.80569684638857)" width="244.15055951169893"
+                        height="31" stroke-miterlimit="3" stroke="none" fill="#F1D7B6" font-family="Arial" font-weight="bold"
+                        font-size="28" text-align="left" text-anchor="start">
+                        <tspan x="0" y="28">
+                            <![CDATA[One]]>
+                        </tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+        <div class="html-layer" /></div>
+</body>
+
+</html>

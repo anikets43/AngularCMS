@@ -1,0 +1,58 @@
+{
+  "schema": {
+    "employee": {
+      "title": "Employee",
+      "description": "Provide Employee Details",
+      "type": "object",
+      "required": true,
+      "properties": {
+         "id": {
+          "title": "Employee Id",
+          "type": "integer",
+          "readonly": true
+        },
+        "name": {
+          "required": true,
+          "title": "Name",
+          "type": "string"
+        },
+        "gender": {
+          "type": "string",
+          "title": "Gender",
+          "enum": [
+            "male",
+            "female",
+            "N/A"
+          ],
+          "default":"male"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "pattern": "^\\S+@\\S+$",
+          "description": "Email should match the pattern"
+        },
+        "address": {
+          "title": "Address",
+          "type": "object",
+          "properties": {
+            "city": {
+              "required": true,
+              "title": "City",
+              "type": "string"
+            },
+            "street": {
+              "required": true,
+              "title": "Street",
+              "type": "string"
+            },
+            "zip": {
+              "title": "Zip",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

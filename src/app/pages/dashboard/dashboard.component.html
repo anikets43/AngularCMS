@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row align-top">
+    <div *ngIf="!isAddClicked">
+      <div class="col-md-offset-1 col-md-10">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Zip</th>
+              <th colspan="2">Actions</th>
+
+            </tr>
+          </thead>
+          <tr *ngFor="let column of employeeList">
+            <td>{{ column.name }} </td>
+            <td>{{ column.gender }} </td>
+            <td>{{ column.email }} </td>
+            <td>{{ column.address.city }} </td>
+            <td>{{ column.address.zip }} </td>
+            <td>
+              <button class="btn btn-sm btn-primary" title="Update" (click)="onUpdate(column.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-danger" title="Delete" (click)="deleteEmployee(column.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          <!--{{ employeeList | json }}-->
+        </table>
+        <button class="btn btn-primary" (click)="addNew()">Add New</button>
+      </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2" *ngIf="isAddClicked">
+      <h4>Employee Form</h4>
+      <json-schema-form *ngIf="formActive" [model]="employeeModel" loadExternalAssets="true" [form]="jsonFormObject" [options]="jsonFormOptions"
+        [framework]="selectedFramework" (onChanges)="onChanges($event)" (onSubmit)="onSubmit($event)" (isValid)="isValid($event)"
+        (validationErrors)="validationErrors($event)">
+      </json-schema-form>
+      <button type="button" class="btn btn-warning" (click)="isAddClicked = false"><i class="fa fa-arrow-left"></i> Back</button>
+
+      <hr>
+      <p>
+        Valid?:
+        <strong *ngIf="formIsValid || prettyValidationErrors" [class.text-success]="formIsValid" [class.text-danger]="!formIsValid">
+          {{formIsValid ? 'Yes' : 'No'}}
+        </strong>
+        <span *ngIf="prettyValidationErrors">
+          — errors from validationErrors():
+        </span>
+      </p>
+
+      <pre *ngIf="prettyValidationErrors" class="bg-">{{prettyValidationErrors}}</pre> Live data — from onChanges():
+      <pre [class.bg-success]="!prettyValidationErrors && prettyLiveFormData !== '{}'" [class.bg-danger]="prettyValidationErrors">{{prettyLiveFormData}}</pre> Submitted data — from onSubmit():
+      <pre [class.bg-success]="prettySubmittedFormData !== 'null'">{{prettySubmittedFormData}}</pre>
+
+
+    </div>
+  </div>
+
+</div>
